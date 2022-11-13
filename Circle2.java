@@ -3,12 +3,12 @@ void setup() {
   noStroke();
   noLoop();
 }
-
+ 
 void draw() {
   drawCircle(width/2, 280, 6);
 }
-
-void drawCircle(int x, int radius, int level) {                    
+ 
+void drawCircle(int x, int radius, int level) {                   
   float tt = 126 * level/4.0;
   fill(tt);
 /**
@@ -18,8 +18,9 @@ b   float: y-coordinate of the ellipse
 c   float: width of the ellipse by default
 d   float: height of the ellipse by default
 **/
-
-  ellipse(x/2, height/2, radius/2, radius/2);
+ 
+  ellipse(2*x/2, height/2, radius, radius);
+  ellipse(width/2, 2*x/2, radius, radius);
   if(level > 1) {
     level = level - 1;
     drawCircle(x+radius/2, radius/2, level);
